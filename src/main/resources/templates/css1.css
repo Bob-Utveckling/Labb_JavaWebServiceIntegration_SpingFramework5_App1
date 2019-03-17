@@ -1,0 +1,9 @@
+/* a suggestion to serve static content such as css content can be:
+https://stackoverflow.com/questions/46567681/spring-5-how-to-provide-static-resources
+https://stackoverflow.com/questions/50792837/thymeleaf-3-spring-5-load-css
+https://docs.spring.io/spring/docs/current/spring-framework-reference/web.html#mvc-config-static-resources
+ */
+
+p {
+    font-size: 20px;
+}

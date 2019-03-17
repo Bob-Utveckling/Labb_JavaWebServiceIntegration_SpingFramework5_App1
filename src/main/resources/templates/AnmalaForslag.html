@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="sv" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Anmäla Tillgänglighet</title>
+
+
+    <style>
+        p { font-size: 30px;}
+        #title {
+            font-size: 30px;
+            width:400px;
+            border:1px solid blueviolet;
+            background-color: aliceblue;
+            padding: 20px;
+
+        }
+        #descrip {
+            font-size: 20px;
+            width:400px;
+            border:0px solid darkblue;
+        }
+        #content {
+            font-size: 15px;
+            width:400px;
+            padding: 20px;
+        }
+        #button {
+            font-size:20px;
+        }
+
+        #detail {
+            padding: 5px;
+            font-size: 15px;
+            font-family: Tahoma;
+            background: azure;
+            width: 200px;
+        }
+
+
+        #td1 {
+            padding: 5px;
+            font-size: 15px;
+            font-family: Tahoma;
+            background: orange;
+            width: 200px;
+        }
+
+        #p1 {
+
+            font-size: 13px;
+            font-family: Tahoma;
+            background: azure;
+            width: 100px;
+            line-height: 10px;
+            height: 15px;
+            border: 1px solid orange;
+        }
+
+        #td2 {
+            background-color: beige;
+            font-size: 15px;
+            font-family: Tahoma;
+        }
+
+        #p3 {
+            font-family: Tahoma;
+            font-size: 12px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<p id="p3">
+    |
+    <a href ="./start">Start</a> |
+    <a href="./skrivNamn">Anmäla färdighet och din förslag</a>|
+    <a href="./viewAllaAnmalanForslag">Se allas anmälan</a>
+    |
+</p>
+<br>
+
+    <p id="title" th:text="'Hej ' + ${name} + '!'" />
+
+    <p id="descrip">
+        Skriv dina färdigheter i fält nedan.<br>
+        Du är välkommen att skriva upp till 5 färdigheter.<br>
+        Vilka färdigheter har du:
+    </p>
+    <form id="content" method="POST" action="/finishedWriting">
+        <input type="hidden" name="name" value='th:text=${name}'> <!-- error with this line to include variable -->
+
+        <div id="detail"> Färdighet 1: <input type="text" name="fardighet1"> </div>
+        <div id="detail"> Färdighet 2: <input type="text" name="fardighet2"> </div>
+        <div id="detail"> Färdighet 3: <input type="text" name="fardighet3"> </div>
+        <div id="detail"> Färdighet 4: <input type="text" name="fardighet4"> </div>
+        <div id="detail"> Färdighet 5: <input type="text" name="fardighet5"> </div>
+
+        <p id="descrip">Skriv gärna dina förslag för arbete:</p>
+        <div id="detail">
+            <textarea name="forslag" rows="5" cols="30"></textarea>
+        </div>
+
+        <input type="submit" id="button" value="Anmäla >">
+    </form>
+</body>
+</html>
